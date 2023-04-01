@@ -15,9 +15,29 @@ const Header = () => {
   const [show, setShow] = useState("translate-y-0");
   const [lastScrollY, setLastScrollY] = useState(0);
 
+  const controlNavbar = () => {
+    if (window.scrollY > 200) {
+      if (window.scrollY > lastScrollY && !mobileMenu) {
+        setShow("-translate-y-[80px]");
+      } else {
+        setShow("shadow-sm");
+      }
+    } else {
+      setShow("translate-y-0");
+    }
+    setLastScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, [lastScrollY]);
+
   return (
     <header
-      className={`w-full h-[30wh] border-green-300 border-2 border-solid md:h-[80px] bg-white flex items-center 
+      className={`w-full h-[50px] border-green-300 border-2 border-solid md:h-[80px] bg-white flex items-center 
       justify-between z-20 sticky top-0 transition-transform duration-300 ${show}`}
     >
       <Wrapper className=" h-[60px] flex justify-between items-center  ">
@@ -69,6 +89,7 @@ const Header = () => {
             </div>
           </div>
           {/* Icon End */}
+
           {/* Mobile Icon Start */}
           <div
             className="w-8  h-8 rounded-full 
