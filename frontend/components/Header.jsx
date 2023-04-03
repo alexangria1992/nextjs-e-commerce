@@ -73,26 +73,28 @@ const Header = () => {
           </div>
           {/* Icon End */}
           {/* Icon Start */}
-          <div
-            className="w-8 md:w-12 h-8 md:h-12 rounded-full 
+          <Link href="/cart">
+            <div
+              className="w-8 md:w-12 h-8 md:h-12 rounded-full 
           flex justify-center items-center hover:bg-black/[0.05] cursor-pointer relative
            border-orange-400 border-2 border-solid"
-          >
-            <BsCart className="text-[15px] md:text-[20px]" />
+            >
+              <BsCart className="text-[15px] md:text-[20px]" />
 
-            <div
-              className="h-[14px] md:h-[18px] min-w-[14px] md:min-w-[18px]
+              <div
+                className="h-[14px] md:h-[18px] min-w-[14px] md:min-w-[18px]
               rounded-full bg-red-600 absolute top-1 left-5 text-white text-[10px]
              flex justify-center items-center px-[2px] md:left-7 md:text-[12px] md:px-[5px]"
-            >
-              5
+              >
+                5
+              </div>
             </div>
-          </div>
+          </Link>
           {/* Icon End */}
 
           {/* Mobile Icon Start */}
           <div
-            className="w-8  h-8 rounded-full 
+            className="w-8  h-8 rounded-full md:hidden
           flex justify-center items-center hover:bg-black/[0.05] cursor-pointer relative -mr-2
            border-purple-500-400 border-2 border-solid md:w-12  md:h-12"
           >
